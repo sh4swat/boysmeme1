@@ -439,6 +439,7 @@
     background: #EAEDED;
     color: #0F1111;
     min-height: 100vh;
+    --g1-header-h: 80px;
   }
 
   #group1View .amz-nav {
@@ -473,7 +474,16 @@
   #group1View .amz-sub-bar .region { color: #FF9900; }
 
   #group1View .amz-main {
-    max-width: 480px; margin: 0 auto; padding: 20px 16px 48px;
+    max-width: 480px; margin: 0 auto; padding: 0 16px 48px;
+  }
+
+  /* First screen: header stack + hero + 4 offer cards */
+  #group1View .amz-fold {
+    min-height: calc(100dvh - var(--g1-header-h));
+    min-height: calc(100svh - var(--g1-header-h));
+    padding-top: 24px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
   }
 
   #group1View .amz-hero {
@@ -481,7 +491,7 @@
     border: 1px solid #D5D9D9;
     border-radius: 8px;
     padding: 22px 18px;
-    margin-bottom: 16px;
+    margin-bottom: 32px;
     box-shadow: 0 2px 5px rgba(15,17,17,0.08);
     text-align: center;
   }
@@ -498,6 +508,8 @@
     font-size: 14px; font-weight: 700; color: #CC0C39;
     margin-bottom: 12px; text-align: center;
   }
+  #group1View #offerContainer { margin-bottom: 0; }
+  #group1View #group1TrustSections { margin-top: 14px; }
 
   #group1View .amz-offer-btn {
     display: flex; align-items: center; gap: 14px;
@@ -633,6 +645,26 @@
   #group1View .vault-faq .faq-ans { color: #565959; border-top-color: #E3E6E6; }
   #group1View .amz-footer { color: #888C8C; font-size: 11px; text-align: center; margin-top: 28px; }
 
+  @media (max-height: 740px) {
+    #group1View { --g1-header-h: 76px; }
+    #group1View .amz-fold { padding-top: 18px; padding-bottom: 8px; }
+    #group1View .amz-hero { padding: 18px 16px; margin-bottom: 26px; }
+    #group1View .amz-hero h1 { font-size: 1.22rem; margin-bottom: 8px; }
+    #group1View .amz-hero p { font-size: 13px; }
+    #group1View .amz-offers-label { margin-bottom: 10px; font-size: 13px; }
+    #group1View .amz-offer-wrap { margin-bottom: 8px; }
+  }
+
+  @media (max-height: 640px) {
+    #group1View { --g1-header-h: 72px; }
+    #group1View .amz-nav { padding: 10px 16px; }
+    #group1View .amz-sub-bar { padding: 8px 16px; font-size: 10px; }
+    #group1View .amz-fold { padding-top: 14px; }
+    #group1View .amz-hero { padding: 16px 14px; margin-bottom: 20px; }
+    #group1View .amz-hero h1 { font-size: 1.12rem; }
+    #group1View .amz-offer-wrap { margin-bottom: 6px; }
+  }
+
   body.view-amazon { background: #EAEDED; }
 </style>
 </head>
@@ -661,12 +693,14 @@
       🟢 <span id="group1AllocCount">280</span> Allocations Remaining Today &nbsp;|&nbsp; <span class="region">📍 <span id="group1Region">Region Detected</span></span>
     </div>
     <main class="amz-main">
-      <div class="amz-hero">
-        <h1>Claim your gift card below 👇</h1>
-        <p>Enter your email, Complete the Deals and Get Rewarded</p>
+      <div class="amz-fold">
+        <div class="amz-hero">
+          <h1>Claim your gift card below 👇</h1>
+          <p>Enter email, complete deals & get rewarded</p>
+        </div>
+        <p class="amz-offers-label">Select your rewards below 👇</p>
+        <div id="offerContainer"></div>
       </div>
-      <p class="amz-offers-label">Select your rewards below 👇</p>
-      <div id="offerContainer"></div>
       <div id="group1TrustSections"></div>
       <p class="amz-footer">&copy;2026 testervault.com</p>
     </main>
@@ -1023,12 +1057,6 @@
       title.className = "amz-offer-title";
       title.textContent = offer.name + " Gift Card";
       titleRow.appendChild(title);
-      if (isAmazon) {
-        const badge = document.createElement("span");
-        badge.className = "amz-featured-inline";
-        badge.textContent = "Featured #1";
-        titleRow.appendChild(badge);
-      }
       textWrap.appendChild(titleRow);
 
       const sub = document.createElement("span");
