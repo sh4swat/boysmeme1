@@ -430,6 +430,210 @@
     color: #ffffff; border: 1px solid rgba(14, 165, 233, 0.4);
     border-radius: var(--border-oval); font-size: 14px; font-weight: 800; text-transform: uppercase; cursor: pointer;
   }
+
+  /* ═══════════════════════════════════════════════════════
+     TIER-1 — AMAZON MARKETPLACE COLOR PALETTE
+     Navy #131921 · Orange #FF9900 · Cart #FFD814 · Bg #EAEDED
+     ═══════════════════════════════════════════════════════ */
+  #group1View {
+    background: #EAEDED;
+    color: #0F1111;
+    min-height: 100vh;
+  }
+
+  #group1View .amz-nav {
+    background: #131921;
+    padding: 12px 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }
+  #group1View .amz-nav-inner {
+    max-width: 480px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  }
+  #group1View .amz-logo {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 1.15rem; font-weight: 800; color: #fff; letter-spacing: -0.02em;
+  }
+  #group1View .amz-logo-smile {
+    color: #FF9900; font-size: 1.35rem; line-height: 1; margin-top: -4px;
+  }
+  #group1View .amz-nav-tag {
+    font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+    color: #FF9900; background: rgba(255,153,0,0.12);
+    border: 1px solid rgba(255,153,0,0.35); padding: 4px 10px; border-radius: 4px;
+  }
+
+  #group1View .amz-sub-bar {
+    background: #232F3E;
+    padding: 9px 16px; text-align: center;
+    font-size: 11px; font-weight: 600; color: #ccc;
+    border-bottom: 1px solid #37475A;
+  }
+  #group1View .amz-sub-bar .alloc-green { color: #067D62; }
+  #group1View .amz-sub-bar .region { color: #FF9900; }
+
+  #group1View .amz-main {
+    max-width: 480px; margin: 0 auto; padding: 20px 16px 48px;
+  }
+
+  #group1View .amz-hero {
+    background: #fff;
+    border: 1px solid #D5D9D9;
+    border-radius: 8px;
+    padding: 22px 18px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 5px rgba(15,17,17,0.08);
+    text-align: center;
+  }
+  #group1View .amz-hero h1 {
+    margin: 0 0 10px;
+    font-size: 1.35rem; font-weight: 700; color: #0F1111;
+    line-height: 1.35; letter-spacing: -0.02em;
+  }
+  #group1View .amz-hero p {
+    margin: 0; font-size: 14px; color: #565959; line-height: 1.5; font-weight: 400;
+  }
+
+  #group1View .amz-offers-label {
+    font-size: 14px; font-weight: 700; color: #CC0C39;
+    margin-bottom: 12px; text-align: center;
+  }
+
+  #group1View .amz-offer-btn {
+    display: flex; align-items: center; gap: 14px;
+    width: 100%; text-align: left; cursor: pointer;
+    background: #fff;
+    border: 1px solid #D5D9D9;
+    border-radius: 8px;
+    padding: 14px 16px;
+    min-height: 76px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(15,17,17,0.06);
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+  }
+  #group1View .amz-offer-btn:hover {
+    border-color: #FF9900;
+    box-shadow: 0 4px 12px rgba(255,153,0,0.15);
+  }
+  #group1View .amz-offer-btn:active { transform: scale(0.99); }
+
+  #group1View .amz-offer-btn.amazon-pulse {
+    border-color: #FF9900;
+    animation: amzCardPulse 2.6s ease-in-out infinite;
+  }
+  @keyframes amzCardPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(255,153,0,0.25), 0 2px 8px rgba(255,153,0,0.12); }
+    50% { box-shadow: 0 0 0 3px rgba(255,153,0,0.2), 0 4px 16px rgba(255,153,0,0.22); }
+  }
+  @keyframes amzClaimBumpy {
+    0%, 100% { transform: translateY(0) scale(1); }
+    14% { transform: translateY(-4px) scale(1.04); }
+    28% { transform: translateY(2px) scale(0.97); }
+    42% { transform: translateY(-5px) scale(1.03); }
+    56% { transform: translateY(2px) scale(0.98); }
+    70% { transform: translateY(-3px) scale(1.02); }
+    84% { transform: translateY(1px) scale(1); }
+  }
+
+  #group1View .amz-title-row {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+    gap: 6px; margin-bottom: 2px; width: 100%;
+  }
+  #group1View .amz-featured-inline {
+    display: inline-block;
+    background: #CC0C39; color: #fff;
+    font-size: 9px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.05em; padding: 3px 7px; border-radius: 3px;
+    flex-shrink: 0; margin-left: auto; margin-right: 14px;
+  }
+  #group1View .amz-offer-wrap { margin-bottom: 10px; }
+  #group1View .amz-offer-wrap .amz-offer-btn { margin-bottom: 0; }
+
+  #group1View .amz-offer-logo {
+    width: 52px; height: 52px; border-radius: 8px;
+    object-fit: contain; background: #F7Fafa;
+    border: 1px solid #E3E6E6; flex-shrink: 0;
+  }
+  #group1View .amz-offer-logo-fb {
+    width: 52px; height: 52px; border-radius: 8px;
+    background: #F3F3F3; border: 1px solid #D5D9D9;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; font-weight: 800; color: #565959; flex-shrink: 0;
+  }
+  #group1View .amz-offer-title {
+    display: inline; font-size: 15px; font-weight: 700; color: #0F1111;
+    flex: 1; min-width: 0;
+  }
+  #group1View .amz-offer-sub {
+    display: block; font-size: 12px; color: #565959; margin-top: 3px;
+  }
+  #group1View .amz-claim-btn {
+    flex-shrink: 0; align-self: center;
+    background: linear-gradient(to bottom, #FFD814, #F7CA00);
+    border: 1px solid #FCD200; border-radius: 20px;
+    padding: 8px 14px; font-size: 11px; font-weight: 700; color: #0F1111;
+    white-space: nowrap;
+  }
+  #group1View .amazon-pulse .amz-claim-btn {
+    animation: amzClaimBumpy 2.4s ease-in-out infinite;
+  }
+  #group1View .amazon-pulse:active .amz-claim-btn { animation-play-state: paused; }
+
+  /* Trust sections — Amazon light theme */
+  #group1View .vault-card {
+    background: #fff;
+    border: 1px solid #D5D9D9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(15,17,17,0.06);
+    backdrop-filter: none;
+  }
+  #group1View .trust-section h2 { color: #0F1111; }
+  #group1View .step-capsule {
+    background: #F7Fafa; border: 1px solid #E3E6E6; border-radius: 8px;
+  }
+  #group1View .step-num {
+    background: #FFF4E5; border-color: #FF9900; color: #C45500;
+  }
+  #group1View .step-capsule h3 { color: #0F1111; }
+  #group1View .step-capsule p { color: #565959; }
+  #group1View .progress-track { background: #E3E6E6; border-color: #D5D9D9; }
+  #group1View .progress-fill {
+    background: linear-gradient(90deg, #FF9900, #FF6138);
+  }
+  #group1View .progress-step { color: #565959; }
+  #group1View .progress-step.active { color: #C45500; }
+  #group1View .progress-arrow { color: #888C8C; }
+  #group1View .trustpilot-badge {
+    background: #F0FFF4; border-color: #067D62; color: #0F1111;
+  }
+  #group1View .trustpilot-badge .stars { color: #FF9900; }
+  #group1View .review-card {
+    background: #F7Fafa; border-color: #E3E6E6;
+  }
+  #group1View .review-card p { color: #0F1111; }
+  #group1View .review-meta { color: #565959; }
+  #group1View .review-meta em { color: #0F1111; }
+  #group1View .verified-tag { color: #067D62; }
+  #group1View .review-time { color: #888C8C; }
+  #group1View .reviews-scroll::-webkit-scrollbar-thumb { background: #D5D9D9; }
+  #group1View .live-feed-viewport {
+    background: #F7Fafa; border-color: #D5D9D9;
+  }
+  #group1View .live-feed-item {
+    background: #fff; border-color: #E3E6E6; color: #565959;
+  }
+  #group1View .live-feed-item strong { color: #007185; }
+  #group1View .live-feed-item .reward { color: #C45500; font-weight: 700; }
+  #group1View .live-feed-item .time { color: #888C8C; }
+  #group1View .vault-faq details {
+    background: #F7Fafa; border-color: #E3E6E6;
+  }
+  #group1View .vault-faq summary { color: #0F1111; }
+  #group1View .vault-faq summary::after { color: #FF9900; }
+  #group1View .vault-faq .faq-ans { color: #565959; border-top-color: #E3E6E6; }
+  #group1View .amz-footer { color: #888C8C; font-size: 11px; text-align: center; margin-top: 28px; }
+
+  body.view-amazon { background: #EAEDED; }
 </style>
 </head>
 <body>
@@ -443,19 +647,28 @@
     </div>
   </div>
 
-  <!-- GROUP 1: TIER-1 + NEPAL -->
-  <div id="group1View" class="hidden min-h-screen bg-obsidian text-white">
-    <div class="vault-sticky-bar">
-      <span class="dot">🟢</span> <span id="group1AllocCount">312</span> Allocations Remaining Today &nbsp;|&nbsp; <span class="region">📍 <span id="group1Region">Region Detected</span></span>
+  <!-- GROUP 1: TIER-1 + NEPAL — Amazon marketplace theme -->
+  <div id="group1View" class="hidden amazon-lander">
+    <nav class="amz-nav">
+      <div class="amz-nav-inner">
+        <div class="amz-logo">
+          <span>Rewards</span><span class="amz-logo-smile">›</span>
+        </div>
+        <span class="amz-nav-tag">Verified Portal</span>
+      </div>
+    </nav>
+    <div class="amz-sub-bar">
+      🟢 <span id="group1AllocCount">280</span> Allocations Remaining Today &nbsp;|&nbsp; <span class="region">📍 <span id="group1Region">Region Detected</span></span>
     </div>
-    <main class="max-w-md mx-auto px-4 pb-12 pt-7">
-      <header class="text-center mb-7">
-        <h1 class="text-[1.4rem] leading-snug font-extrabold text-white mb-3 tracking-tight">Claim your gift card below 👇</h1>
-        <p class="text-sm text-silver-muted font-medium leading-relaxed px-1">Enter your email, Complete the Deals and Get Rewarded</p>
-      </header>
-      <div id="offerContainer" class="flex flex-col gap-3 mb-5"></div>
+    <main class="amz-main">
+      <div class="amz-hero">
+        <h1>Claim your gift card below 👇</h1>
+        <p>Enter your email, Complete the Deals and Get Rewarded</p>
+      </div>
+      <p class="amz-offers-label">Select your rewards below 👇</p>
+      <div id="offerContainer"></div>
       <div id="group1TrustSections"></div>
-      <p class="text-center text-[11px] text-slate-600 mt-10 tracking-wide">&copy;2026 testervault.com</p>
+      <p class="amz-footer">&copy;2026 testervault.com</p>
     </main>
   </div>
 
@@ -775,8 +988,65 @@
     renderLiveFeed(feedTrackId);
   }
 
-  function createCapsuleButton(offer) {
+  function createCapsuleButton(offer, amazonTheme) {
     const isAmazon = offer.name === "Amazon";
+
+    if (amazonTheme) {
+      const wrap = document.createElement("div");
+      wrap.className = "amz-offer-wrap";
+
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "amz-offer-btn" + (isAmazon ? " amazon-pulse" : "");
+      btn.addEventListener("click", () => openOffer(offer.url));
+
+      const imgWrap = document.createElement("div");
+      const img = document.createElement("img");
+      img.src = offer.image;
+      img.alt = offer.name;
+      img.className = "amz-offer-logo";
+      img.onerror = function () {
+        this.style.display = "none";
+        const fb = document.createElement("div");
+        fb.className = "amz-offer-logo-fb";
+        fb.textContent = offer.name.charAt(0);
+        imgWrap.appendChild(fb);
+      };
+      imgWrap.appendChild(img);
+
+      const textWrap = document.createElement("div");
+      textWrap.className = "flex-1 min-w-0";
+
+      const titleRow = document.createElement("div");
+      titleRow.className = "amz-title-row";
+      const title = document.createElement("span");
+      title.className = "amz-offer-title";
+      title.textContent = offer.name + " Gift Card";
+      titleRow.appendChild(title);
+      if (isAmazon) {
+        const badge = document.createElement("span");
+        badge.className = "amz-featured-inline";
+        badge.textContent = "Featured #1";
+        titleRow.appendChild(badge);
+      }
+      textWrap.appendChild(titleRow);
+
+      const sub = document.createElement("span");
+      sub.className = "amz-offer-sub";
+      sub.textContent = "(Enter email & Complete Deals)";
+      textWrap.appendChild(sub);
+
+      const claim = document.createElement("span");
+      claim.className = "amz-claim-btn";
+      claim.textContent = "Claim now";
+
+      btn.appendChild(imgWrap);
+      btn.appendChild(textWrap);
+      btn.appendChild(claim);
+      wrap.appendChild(btn);
+      return wrap;
+    }
+
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "capsule-btn w-full flex items-center gap-4 px-5 py-4 text-left cursor-pointer" + (isAmazon ? " amazon-pulse" : "");
@@ -825,7 +1095,7 @@
     if (!offers) return;
     const container = document.getElementById("offerContainer");
     container.innerHTML = "";
-    offers.forEach(offer => container.appendChild(createCapsuleButton(offer)));
+    offers.forEach(offer => container.appendChild(createCapsuleButton(offer, true)));
   }
 
   function hideAllViews() {
@@ -834,8 +1104,8 @@
 
   function showGroup1(countryCode, countryName) {
     hideAllViews();
-    document.body.classList.add("view-vault");
-    document.body.classList.remove("theme-teststar");
+    document.body.classList.add("view-amazon");
+    document.body.classList.remove("view-vault", "theme-teststar");
     document.getElementById("group1View").classList.remove("hidden");
     document.title = "Claim Your Gift Card | TESTERVAULT";
     updateRegionBadge("group1", countryCode, countryName);
