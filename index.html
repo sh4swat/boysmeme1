@@ -83,7 +83,14 @@
   }
   body.loaded { opacity: 1; }
   body.view-vault { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
-  body.theme-teststar { font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+  body.theme-teststar,
+  body.theme-testerheld { font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+
+  body.theme-testerheld {
+    --bg: #05070B;
+    --card: #121218;
+    --line-strong: rgba(255, 255, 255, 0.18);
+  }
 
   .vault-sticky-bar {
     position: sticky; top: 0; z-index: 40;
@@ -764,6 +771,64 @@
     </div>
   </div>
 
+  <!-- GROUP DACH: TESTERHELD CPI — DE, CH, AT. Same DOM pattern as Teststar, unique IDs -->
+  <div id="groupDachView" class="hidden">
+    <div class="wrap">
+      <header class="ts-header">
+        <h1 id="thPromoHeader">Deals abschließen & echtes Geld freischalten 👇🏻</h1>
+        <div class="timer"><span class="tag">Active Session</span> <span id="thTimer">24:00:00</span></div>
+      </header>
+      <section class="offer" id="thMainOffer">
+        <div class="logo-container" id="thPromoLogo">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <span>TESTERHELD</span>
+        </div>
+        <div>
+          <p class="title" id="thPromoTitle">TesterHeld Game & App Rewards</p>
+          <p class="blurb" id="thPromoBlurb">Spiele Featured Games, erreiche Level & zahle echtes Geld direkt auf PayPal aus!</p>
+        </div>
+        <a href="#" class="cta" id="thPromoCTA" onclick="routeOffer();return false;">Jetzt Cash verdienen</a>
+      </section>
+      <section class="how">
+        <h2 id="thHowItWorksHeader">So startest du</h2>
+        <div class="steps" id="thStepsContainer">
+          <div class="step"><div class="ico">📱</div><div><h3>1. Aufgaben wählen</h3><p>Wähle schnelle Game-Tests oder einfache Online-Aufgaben in deinem Dashboard.</p></div></div>
+          <div class="step"><div class="ico">🎮</div><div><h3>2. Deals abschließen</h3><p>Schließe die gewählten Deals in einem Durchgang ab, damit das Tracking greift.</p></div></div>
+          <div class="step"><div class="ico">💸</div><div><h3>3. PayPal-Auszahlung</h3><p>Gleiche Cash-Tiers: 2 Deals (€80) bis 25 Deals (€1.000) direkt auf PayPal.</p></div></div>
+        </div>
+        <div class="value-badge" id="thPromoValueBox">
+          <div class="value-badge-title">Reward Tier Progression</div>
+          <div class="value-grid">
+            <div class="value-row"><span>2 abgeschlossene Deals</span><strong id="thTier1Val">€80 Auszahlung</strong></div>
+            <div class="value-row"><span>5 abgeschlossene Deals</span><strong id="thTier2Val">€250 Auszahlung</strong></div>
+            <div class="value-row"><span>25 abgeschlossene Deals</span><strong id="thTier3Val">€1.000 Top-Tier</strong></div>
+          </div>
+        </div>
+      </section>
+      <section class="proof" id="thProofSection">
+        <h2 id="thPromoSocialHeader">Live verifizierte Auszahlungen</h2>
+        <div class="ticker-hint">💡 Doppeltippen, um den Feed zu pausieren</div>
+        <div id="thProofInner">
+          <div class="vouch-ticker-viewport" id="thVouchViewport">
+            <div class="vouch-ticker-track" id="thVouchTrack"></div>
+          </div>
+        </div>
+      </section>
+      <section class="faq">
+        <h2 id="thFaqMainHeader">Häufige Fragen</h2>
+        <div id="thFaqContainer">
+          <details><summary>Brauche ich eine Kreditkarte?</summary><div class="details-content"><span class="details-ans-main">Nein, keine Kreditkarte nötig.</span><span class="details-ans-sub">Die meisten Partner-Deals sind kostenlose App-Downloads, kurze Umfragen oder Gratis-Anmeldungen.</span></div></details>
+          <details><summary>Gibt es versteckte Kosten?</summary><div class="details-content"><span class="details-ans-main">100% kostenlos mitmachen.</span><span class="details-ans-sub">Du zahlst nichts, um deine Belohnung auszuzahlen.</span></div></details>
+          <details><summary>Wie erhalte ich mein Geld oder den Code?</summary><div class="details-content"><span class="details-ans-main">Belohnungen kommen digital.</span><span class="details-ans-sub">Codes und PayPal-Auszahlungen gehen an die E-Mail, mit der du dich angemeldet hast.</span></div></details>
+          <details><summary>Warum muss ich Deals abschließen?</summary><div class="details-content"><span class="details-ans-main">Sponsoren finanzieren den Reward-Pool.</span><span class="details-ans-sub">Wenn du Apps testest oder Aufgaben erledigst, zahlen Partner eine Gebühr. Davon bekommst du deinen Anteil.</span></div></details>
+          <details id="thFaqDealsTier"><summary>Warum bringen mehr Deals mehr Geld?</summary><div class="details-content"><span class="details-ans-main">Mehr Abschluss = höheres Budget-Tier.</span><span class="details-ans-sub" id="thFaqTierText">2 Deals schalten die Basis (€80) frei, bis zu 25 Deals das Top-Tier (€1.000).</span></div></details>
+        </div>
+      </section>
+      <div class="rating" id="thRatingText">⭐️ 4.9/5 • 19.290 Spieler haben diese Woche Cash verdient</div>
+      <p class="foot">&copy;2026 testervault.com</p>
+    </div>
+  </div>
+
   <!-- GROUP 3: GLOBAL REWARDS PORTAL -->
   <div id="group3View" class="hidden min-h-screen bg-obsidian text-white">
     <div class="vault-sticky-bar">
@@ -805,10 +870,12 @@
   };
 
   const LINK_TESTSTAR_CPI = "https://taprkr.com/r/eyJ0IjoidGVzdHN0YXIiLCJ0aWQiOiIwY2NmODNkMDllMzYwNjUxMTJmNiIsInRzIjoxNzg1MzQxNjgyOTEzfQ";
+  const LINK_TESTERHELD_CPI = "https://taprkr.com/r/eyJ0IjoidGVzdGVyaGVsZC1jcGkiLCJ0aWQiOiIwY2NmODNkMDllMzYwNjUxMTJmNiIsInRzIjoxNzg3NDA2NzI2NTcwfQ";
   const LINK_CPAGRIP_SMARTLINK = "https://playabledownloads.com/1906946";
 
   const TIER1_COUNTRIES = ['US', 'GB', 'CA', 'AU', 'NP'];
   const TESTSTAR_EU_COUNTRIES = ['IE', 'BE', 'NL', 'SE', 'DK', 'FI', 'LU', 'IS', 'NO', 'FR'];
+  const TESTERHELD_DACH_COUNTRIES = ['DE', 'CH', 'AT'];
   const EURO_COUNTRIES = ['IE', 'BE', 'NL', 'SE', 'DK', 'FI', 'LU', 'IS', 'NO', 'FR'];
 
   const OFFERS = {
@@ -840,6 +907,7 @@
 
   const REGION_NAMES = {
     US: "United States", GB: "United Kingdom", CA: "Canada", AU: "Australia", NP: "Nepal",
+    DE: "Germany", CH: "Switzerland", AT: "Austria",
     IE: "Ireland", BE: "Belgium", NL: "Netherlands", SE: "Sweden", DK: "Denmark",
     FI: "Finland", LU: "Luxembourg", IS: "Iceland", NO: "Norway", FR: "France"
   };
@@ -1127,13 +1195,13 @@
   }
 
   function hideAllViews() {
-    ["group1View", "group2View", "group3View"].forEach(id => document.getElementById(id).classList.add("hidden"));
+    ["group1View", "group2View", "groupDachView", "group3View"].forEach(id => document.getElementById(id).classList.add("hidden"));
   }
 
   function showGroup1(countryCode, countryName) {
     hideAllViews();
     document.body.classList.add("view-amazon");
-    document.body.classList.remove("view-vault", "theme-teststar");
+    document.body.classList.remove("view-vault", "theme-teststar", "theme-testerheld");
     document.getElementById("group1View").classList.remove("hidden");
     document.title = "Claim Your Gift Card | TESTERVAULT";
     updateRegionBadge("group1", countryCode, countryName);
@@ -1144,7 +1212,7 @@
 
   function applyTeststarLayoutEngine(sym) {
     document.body.classList.add("theme-teststar");
-    document.body.classList.remove("view-vault");
+    document.body.classList.remove("view-vault", "theme-testerheld");
     document.title = "Teststar - Play Games, Test Apps & Earn Direct Cash";
     document.getElementById("promoHeader").textContent = "Play Mobile Games & Earn Real Cash Rewards 👇🏻";
     document.getElementById("promoLogo").innerHTML = `<svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span>TESTSTAR</span>`;
@@ -1164,8 +1232,8 @@
     document.getElementById("ratingText").textContent = "⭐️ 4.9/5 • 19,290 players earned cash rewards this week";
   }
 
-  function renderScrollingVouches(items) {
-    const track = document.getElementById("vouchTrack");
+  function renderScrollingVouches(items, trackId) {
+    const track = document.getElementById(trackId || "vouchTrack");
     if (!track) return;
     const html = items.map(item => `
       <div class="vouch-card">
@@ -1176,9 +1244,9 @@
     track.innerHTML = `<div class="vouch-group">${html}</div><div class="vouch-group" aria-hidden="true">${html}</div>`;
   }
 
-  function initTickerDoubleTapControls() {
-    const viewport = document.getElementById("vouchViewport");
-    const track = document.getElementById("vouchTrack");
+  function initTickerDoubleTapControls(viewportId, trackId) {
+    const viewport = document.getElementById(viewportId || "vouchViewport");
+    const track = document.getElementById(trackId || "vouchTrack");
     if (!viewport || !track) return;
     let lastTap = 0;
     viewport.addEventListener('touchend', function(e) {
@@ -1198,6 +1266,45 @@
 
   function closeGeoModal() { document.getElementById("geoModal").classList.remove("show"); }
 
+  function getDachCurrency(countryCode) {
+    if (countryCode === "CH") return "CHF ";
+    return "€";
+  }
+
+  function applyTesterHeldLayoutEngine(sym) {
+    document.body.classList.add("theme-teststar", "theme-testerheld");
+    document.body.classList.remove("view-vault", "view-amazon");
+    document.title = "TesterHeld - Spiele Games, teste Apps & verdiene Cash";
+    document.getElementById("thPromoHeader").textContent = "Spiele Mobile Games & verdiene echtes Geld 👇🏻";
+    document.getElementById("thPromoLogo").innerHTML = `<svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span>TESTERHELD</span>`;
+    document.getElementById("thPromoTitle").textContent = "TesterHeld Game & App Rewards";
+    document.getElementById("thPromoBlurb").textContent = "Spiele Featured Games, erreiche Level & zahle echtes Geld direkt auf PayPal aus!";
+    document.getElementById("thPromoCTA").textContent = "Jetzt Cash verdienen";
+    document.getElementById("thHowItWorksHeader").textContent = "So startest du";
+    document.getElementById("thStepsContainer").innerHTML = `
+      <div class="step"><div class="ico">📱</div><div><h3>1. Aufgaben wählen</h3><p>Wähle schnelle Game-Tests oder einfache Online-Aufgaben in deinem Dashboard.</p></div></div>
+      <div class="step"><div class="ico">🎮</div><div><h3>2. Deals abschließen</h3><p>Schließe die gewählten Deals in einem Durchgang ab, damit das Tracking greift.</p></div></div>
+      <div class="step"><div class="ico">💸</div><div><h3>3. PayPal-Auszahlung</h3><p>Gleiche Cash-Tiers! 2 Deals (${sym}80) bis 25 Deals (${sym}1.000) direkt auf PayPal.</p></div></div>`;
+    document.getElementById("thTier1Val").textContent = `${sym}80 Auszahlung`;
+    document.getElementById("thTier2Val").textContent = `${sym}250 Auszahlung`;
+    document.getElementById("thTier3Val").textContent = `${sym}1.000 Top-Tier`;
+    document.getElementById("thFaqTierText").textContent = `2 Deals schalten die Basis (${sym}80) frei, bis zu 25 Deals das Top-Tier (${sym}1.000).`;
+    document.getElementById("thPromoSocialHeader").textContent = "Live verifizierte Auszahlungen";
+    document.getElementById("thRatingText").textContent = "⭐️ 4.9/5 • 19.290 Spieler haben diese Woche Cash verdient";
+  }
+
+  function showGroupDach(countryCode) {
+    hideAllViews();
+    document.getElementById("groupDachView").classList.remove("hidden");
+    targetAffiliateLink = LINK_TESTERHELD_CPI;
+    const sym = getDachCurrency(countryCode);
+    applyTesterHeldLayoutEngine(sym);
+    renderScrollingVouches(formatVouches(rawCpaGripVouches, sym), "thVouchTrack");
+    showGeoModal("Region Notice 📍", GEO_FALLBACK_TITLE, GEO_FALLBACK_MESSAGE);
+    initTickerDoubleTapControls("thVouchViewport", "thVouchTrack");
+    requestAnimationFrame(() => document.getElementById("thMainOffer").classList.add("reveal"));
+  }
+
   function showGroup2(countryCode) {
     hideAllViews();
     document.getElementById("group2View").classList.remove("hidden");
@@ -1212,7 +1319,7 @@
   function showGroup3(countryCode, countryName) {
     hideAllViews();
     document.body.classList.add("view-vault");
-    document.body.classList.remove("theme-teststar");
+    document.body.classList.remove("theme-teststar", "theme-testerheld");
     document.getElementById("group3View").classList.remove("hidden");
     targetAffiliateLink = LINK_CPAGRIP_SMARTLINK;
     document.title = "Global Rewards Portal | TESTERVAULT";
@@ -1223,11 +1330,12 @@
   }
 
   (function(){
-    const el = document.getElementById('timer');
-    if (!el) return;
+    const els = [document.getElementById("timer"), document.getElementById("thTimer")].filter(Boolean);
+    if (!els.length) return;
     let t = 24 * 60 * 60;
     setInterval(() => {
-      el.textContent = `${String(Math.floor(t/3600)).padStart(2,'0')}:${String(Math.floor((t%3600)/60)).padStart(2,'0')}:${String(t%60).padStart(2,'0')}`;
+      const text = `${String(Math.floor(t/3600)).padStart(2,'0')}:${String(Math.floor((t%3600)/60)).padStart(2,'0')}:${String(t%60).padStart(2,'0')}`;
+      els.forEach(el => { el.textContent = text; });
       t = (t - 1 + 86400) % 86400;
     }, 1000);
   })();
@@ -1244,6 +1352,8 @@
         showGroup1(userGeo, countryName);
       } else if (TESTSTAR_EU_COUNTRIES.includes(userGeo)) {
         showGroup2(userGeo);
+      } else if (TESTERHELD_DACH_COUNTRIES.includes(userGeo)) {
+        showGroupDach(userGeo);
       } else {
         showGroup3(userGeo, countryName);
       }
